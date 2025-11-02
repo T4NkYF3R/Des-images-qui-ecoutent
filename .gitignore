@@ -6,3 +6,6 @@ __pycache__
 
 # Generated files
 /data
+
+# Scripts
+*.sh
