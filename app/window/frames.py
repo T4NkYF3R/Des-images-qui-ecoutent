@@ -91,10 +91,18 @@ class ResponseFrame(BaseFrame):
             label.grid(row=0, column=i*5)
 
     def _save_button_clicked(self) -> None:
-        if self._value_selected is not None:
-            self._data.save_response(self._value_selected)
-            for i, button in enumerate(self._buttons):
-                button.configure(background=COLOR[i], foreground="black")
+        if self._value_selected is None: return
+
+        self._data.save_response(music=self._parent.getCurrentMusic(), score=self._value_selected, stimulus="")
+        self._value_selected = None
+        for i, button in enumerate(self._buttons):
+            button.configure(background=COLOR[i], foreground="black")
+        self._parent.setSavedResponses(self._parent.getSavedResponses() + 1)
+
+        if self._parent.getSavedResponses() == 4:
+            self._parent.setSavedResponses(0)
+            self._parent.hide_frame("image")
+            self._parent.hide_frame("response")
 
     def _create_save_button(self) -> None:
         button: tkinter.Button = self.create_button(
