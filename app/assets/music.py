@@ -25,7 +25,7 @@ class Music:
                 if music.suffix.lower() in extensions:
                     musics.append(music)
                 else:
-                    print(f"Unsupported extension for file '{music.name}'")
+                    print(f"Unsupported extension for music file '{music.name}'")
         if len(musics) < 2:
             raise RuntimeError("Not enought music to play.")
         if random.random() >= 0.5:
@@ -45,6 +45,9 @@ class Music:
 
     def _stop(self) -> None:
         pygame.mixer.music.stop()
+
+    def getMusicLoaded(self) -> str | None:
+        return self._currentTrack
 
     def run(self) -> None:
         self._session = self._window.getSession()
