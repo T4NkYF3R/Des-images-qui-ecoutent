@@ -23,6 +23,7 @@ class Window(tkinter.Tk):
 
         self._frames = {}
         self._session = 1
+        self._savedResponse = 0
 
         from app.assets import Music
         self._musicPlayer = Music(self)
@@ -46,6 +47,15 @@ class Window(tkinter.Tk):
 
     def getSession(self) -> int:
         return self._session
+
+    def getSavedResponses(self) -> int:
+        return self._savedResponse
+
+    def setSavedResponses(self, value: int) -> None:
+        self._savedResponse = value
+
+    def getCurrentMusic(self) -> str:
+        return self._musicPlayer.getMusicLoaded()
 
     def run(self) -> None:
         self._musicThread.start()
