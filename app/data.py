@@ -19,7 +19,7 @@ class Data:
                 writer = csv.writer(file, delimiter=";")
                 writer.writerow(["Musique", "Note [0-10]", "Stimuli neutre"])
 
-    def save_response(self, musique: str, note: str, stimuli, str) -> None:
+    def save_response(self, music: str, score: str, stimulus: str) -> None:
         with open(CSV_PATH, "a", newline="", encoding="utf-8") as file:
             writer = csv.writer(file, delimiter=";")
-            writer.writerow([musique, note, stimuli])
+            writer.writerow([music, score, stimulus])
