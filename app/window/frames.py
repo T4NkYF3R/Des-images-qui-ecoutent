@@ -188,7 +188,7 @@ class EndFrame(BaseFrame):
         self.placeY = (self._window.height - self._height) / 2
 
     def _end_session(self) -> None:
-        self._window.close_window()
+        self._window.stop()
 
     def _create_end_sutton(self) -> None:
         button = self.create_button(

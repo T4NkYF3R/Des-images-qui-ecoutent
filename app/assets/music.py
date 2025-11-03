@@ -13,6 +13,7 @@ class Music:
     def __init__(self, window: Window) -> None:
         self._window = window
         pygame.mixer.init()
+        self._running = True
         self._currentTrack = None
         self._musics = self._loadMusics()
         self._session = 0
@@ -46,11 +47,16 @@ class Music:
     def _stop(self) -> None:
         pygame.mixer.music.stop()
 
+    def stop(self) -> None:
+        self._running = False
+        pygame.mixer.music.stop()
+        pygame.mixer.quit()
+
     def getMusicLoaded(self) -> str | None:
         return self._currentTrack
 
     def _check_session_change(self) -> None:
-        while True:
+        while self._running:
             session = self._window.getSession()
             if session < 0:
                 self._stop()
