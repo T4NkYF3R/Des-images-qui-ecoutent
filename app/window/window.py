@@ -30,7 +30,6 @@ class Window(tkinter.Tk):
         self._musicThread = Thread(target=self._musicPlayer.run, daemon=True)
 
     def _close_window(self, event=None) -> None:
-        print(event)
         self.destroy()
 
     def _start_music_thread(self) -> None:
