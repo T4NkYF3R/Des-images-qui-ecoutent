@@ -16,21 +16,22 @@ Il vise à explorer **le lien entre induction musicale et perception visuelle** 
 ## 🧱 **Architecture projet**
 ```bash
 .
-│   # Code source
-├── /app
+
+├── /app    # Code source
 │   ├── /assets
 │   ├── /window
 │   ├── __init__.py
 │   ├── config.py
 │   ├── data.py
 │   └── main.py
-│   # Assets du projet
-├── /assets
+│
+├── /assets # Assets du projet
 │   ├── /image
 │   └── /music
-│   # Sauvegarde des résultats
-├── /data
+│
+├── /data   # Sauvegarde des résultats
 │   └── reponses.csv
+│
 ├── README.md
 └── requirement.txt
 ```
@@ -78,11 +79,25 @@ python -m app.main
 ### 🖼️ **Images**
 `./assets/image`  
 Les images fonctionnent par **pairs** 🔗.  
-➡️ Vous aurez besoin de **4 pairs** d'images.
+➡️ Vous aurez besoin de **4 pairs** d'images.  
+#### 🗂️ **Nomenclature attendue**  
+Les fichiers doivent suivre le format:
+```css
+nom_1.[png|jpeg|jpg|gif|bmp]
+nom_2.[png|jpeg|jpg|gif|bmp]
+```
 ### 🎵 **Musiques**
 `./assets/music`  
 Il vous faut **2 musiques** 🎶  
 Assurez-vous qu'elles soient prêtes avant de lancer l'expérience 🧠.
+#### 🗂️ **Format acceptés**
+Les fichiers doivent êtres d'un des formats suivant:
+```css
+.mp3
+.wav
+.ogg
+.flac
+```
 
 ---
 ## 📊 **Récupérations des données**
