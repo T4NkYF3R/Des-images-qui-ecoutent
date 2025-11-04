@@ -26,9 +26,9 @@ class Music:
                 if music.suffix.lower() in extensions:
                     musics.append(music)
                 else:
-                    print(f"Unsupported extension for music file '{music.name}'")
+                    print(f"[assets/music] Unsupported extension for music file '{music.name}'")
         if len(musics) < 2:
-            raise RuntimeError("Not enought music to play.")
+            raise RuntimeError(f"[assets/music] Not enought music to play ({len(music)}/2 required).")
         random.shuffle(musics)
         return musics
 
