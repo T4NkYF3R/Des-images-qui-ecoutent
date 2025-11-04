@@ -29,11 +29,8 @@ class Music:
                     print(f"Unsupported extension for music file '{music.name}'")
         if len(musics) < 2:
             raise RuntimeError("Not enought music to play.")
-        if random.random() >= 0.5:
-            musics.reverse()
-            return musics
-        else:
-            return musics
+        random.shuffle(musics)
+        return musics
 
     def _load(self, session: int = 1 | 2) -> None:
         match session:
