@@ -9,11 +9,11 @@
 ![Email](https://img.shields.io/badge/Email-contact-yellow?logo=gmail&logoColor=white&style=plastic)
 
 ---
-> Ce projet est une contribution à une **expérience de psychologie cognitive** de deuxième année de psychologie.  
+> 🧩 Ce projet est une contribution à une **expérience de psychologie cognitive** de deuxième année de psychologie.  
 Il vise à explorer **le lien entre induction musicale et perception visuelle** à travers des stimulis picturaux neutre.
 
 ---
-## 🔧 **Architecture projet**
+## 🧱 **Architecture projet**
 ```bash
 .
 │   # Code source
@@ -36,7 +36,7 @@ Il vise à explorer **le lien entre induction musicale et perception visuelle** 
 ```
 
 ---
-## 🛠️ **Installation**
+## ⚙️ **Installation**
 ### 1️⃣ **Créer un environnement virtuel**
 - **Windows :**
 ```bash
@@ -52,8 +52,8 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-`requirements.txt` contient les bibliotèques nécessaires (`pygame`, etc.)  
-`Tkinter` n'est pas inclus car il fait partie de Python standard.
+📦 `requirements.txt` contient les bibliotèques nécessaires (`pygame`, etc.)  
+🧩 `Tkinter` n'est pas inclus car il fait partie de Python standard.
 ### 3️⃣ **Vérifier que `Tkinter` est installé**
 - **Windows :** `Tkinter` est généralement inclus avec Python
 - **Linux *(Fedora)* :**
@@ -65,14 +65,33 @@ sudo dnf install python3-tkinter
 python -m app.main
 ```
 
+## 🎓 **L'experience**
+- L'expérience se déroule en **2 sessions** 🧩.
+- Une pause est prévu entre chaque session ☕.
+### 🎶 Déroulement d'une session
+- La **musique** est joué pendant **tout la durée de la session** 🎧.
+- La session commence par **30 secondes** sans **stimuli visuels** 🕐 afin de favoriser la **concentration sur la musique** 🎵.
+- Vous devrez ensuite **enregistrer votre niveau de ressenti** pour les **4 images** présentées 🖼️💭.
+
+---
+## 📂 **Assets**
+### 🖼️ **Images**
+`./assets/image`  
+Les images fonctionnent par **pairs** 🔗.  
+➡️ Vous aurez besoin de **4 pairs** d'images.
+### 🎵 **Musiques**
+`./assets/music`  
+Il vous faut **2 musiques** 🎶  
+Assurez-vous qu'elles soient prêtes avant de lancer l'expérience 🧠.
+
 ---
 ## 📊 **Récupérations des données**
 Les données de l'expérience sont enregistrées au format `csv` dans dans le fichier:
 ```bash
 ./data/reponse.csv
 ```
-Vous pouvez ouvrir ce fichier avec **Excel** ou un autre tableur.  
-Sélectionnez **le point virgule (`;`)** comme séparateur de colonnes.
+🗂️ Ce fichier peut être ouvert avec **Excel** ou un autre tableur.  
+➡️ Sélectionnez **le point virgule (`;`)** comme séparateur de colonnes.
 
 ---
 ## 👤 **Crédits**
@@ -88,6 +107,9 @@ Sélectionnez **le point virgule (`;`)** comme séparateur de colonnes.
 ---
 ## ⚖️ **Licence**
 © 2025 Nicolas Négron et l'équipe de recherche - Tous droits réservés.
-> Le code source est la propriété de Nicolas Négron.  
-Le protocole expérimental et la conception scientifique appartient à l'équipe de recherche en psychologie cognitive.  
+> 💡 Le code source est la propriété de Nicolas Négron.  
+🧠 Le protocole expérimental et la conception scientifique appartient à l'équipe de recherche en psychologie cognitive.  
 Toute utilisation, modification ou diffusion nécessite une autorisation préalable.
+
+---
+📦 Pour plus de détails sur l'évolution du projet, consultez la section **[Releases](https://github.com/T4NkYF3R/Des-images-qui-ecoutent/releases)** du dépôt.
