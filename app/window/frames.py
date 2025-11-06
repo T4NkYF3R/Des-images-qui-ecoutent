@@ -177,7 +177,8 @@ class ResponseFrame(BaseFrame):
             label.grid(row=0, column=i*5)
 
     def _save_button_clicked(self) -> None:
-        if self._value_selected is None: return
+        if self._value_selected is None:
+            return
 
         musicName = Path(self._window.getCurrentMusic()).stem
         imageFrame: ImageFrame = self._window.getFrame("image")

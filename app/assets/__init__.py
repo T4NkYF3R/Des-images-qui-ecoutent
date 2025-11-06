@@ -1,2 +1,2 @@
-from .music import Music
-from .image import Image
+from .music import Music as Music
+from .image import Image as Image
