@@ -14,6 +14,6 @@ else:
     for i in range(lenLines - 1, 0, -1):
         match = re.match(r'Found (\d+) errors?\.', lines[i])
         if match:
-            print(f"::error::{match.group()} Look at ruff-report.log for details.")
+            print(f"::error::{match.group()} Look at Ruff report.log for details.")
             break
     exit(code=1)
