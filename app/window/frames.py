@@ -18,6 +18,9 @@ NB_SECONDS = 1
 TO_MS = 1000
 AFTER_TIME = NB_SECONDS * TO_MS
 
+MAX_WIDTH_IMAGE = 500
+MAX_HEIGHT_IMAGE = 500
+
 
 class BaseFrame(tkinter.Frame):
     def __init__(self, window: Window) -> None:
@@ -50,6 +53,17 @@ class BaseFrame(tkinter.Frame):
             background=WINDOW_COLOR
         )
 
+    def _getSize(self) -> None:
+        self.place(x=self._window.width, y=self._window.height)
+        self.update()
+        self._width = self.winfo_width()
+        self._height = self.winfo_height()
+        self.place_forget()
+        self.update()
+
+    def getSize(self) -> tuple[int, int]:
+        return (self._width, self._height)
+
 
 class StartFrame(BaseFrame):
     def __init__(self, window: Window) -> None:
@@ -57,12 +71,7 @@ class StartFrame(BaseFrame):
         self._label = None
         self._create_session_label()
         self._create_start_sutton()
-
-        self.place(x=self._window.width, y=self._window.height)
-        self.update()
-        self._width = self.winfo_width()
-        self._height = self.winfo_height()
-        self.place_forget()
+        self._getSize()
         self.placeX = (self._window.width - self._width) / 2
         self.placeY = (self._window.height - self._height) / 2
 
@@ -102,14 +111,6 @@ class ImageFrame(BaseFrame):
         self._photo = None
         self._idx = 0
 
-        self.place(x=self._window.width, y=self._window.height)
-        self.update()
-        self._width = self.winfo_width()
-        self._height = self.winfo_height()
-        self.place_forget()
-        self.placeX = (self._window.width - self._width) / 2
-        self.placeY =  self._height + PADY
-
     def getCurrentImage(self) -> str | None:
         return self._currentImage
 
@@ -117,8 +118,19 @@ class ImageFrame(BaseFrame):
         self._currentImage = self._imagesLists[self._idx]
         self._idx += 1
         image = Img.open(self._currentImage)
+        width , height = image.size
+        ratio = min(MAX_WIDTH_IMAGE / width, MAX_HEIGHT_IMAGE / height)
+        width = int(width * ratio)
+        height = int(height * ratio)
+        image = image.resize(size=(width, height))
         self._photo = ImgTk.PhotoImage(image=image)
         self._label.configure(image=self._photo)
+
+        self._getSize()
+        responseFrame: BaseFrame = self._window.getFrame("response")
+        _, rHeight = responseFrame.getSize()
+        self.placeX = (self._window.width - self._width) / 2
+        self.placeY = (self._window.height - rHeight - self._height) / 2
 
 
 class ResponseFrame(BaseFrame):
@@ -132,12 +144,7 @@ class ResponseFrame(BaseFrame):
         self._buttons: list[tkinter.Button] = self._create_response_buttons()
         self._create_response_labels()
         self._create_save_button()
-
-        self.place(x=self._window.width, y=self._window.height)
-        self.update()
-        self._width = self.winfo_width()
-        self._height = self.winfo_height()
-        self.place_forget()
+        self._getSize()
         self.placeX = (self._window.width - self._width) / 2
         self.placeY = self._window.height - self._height - PADY
 
@@ -193,6 +200,7 @@ class ResponseFrame(BaseFrame):
         else:
             imageFrame: ImageFrame = self._window.getFrame("image")
             imageFrame.setNextImage()
+            self._window.show_frame("image")
 
     def _create_save_button(self) -> None:
         button: tkinter.Button = self.create_button(
@@ -210,12 +218,7 @@ class EndFrame(BaseFrame):
         super().__init__(window)
         self._create_end_label()
         self._create_end_sutton()
-
-        self.place(x=self._window.width, y=self._window.height)
-        self.update()
-        self._width = self.winfo_width()
-        self._height = self.winfo_height()
-        self.place_forget()
+        self._getSize()
         self.placeX = (self._window.width - self._width) / 2
         self.placeY = (self._window.height - self._height) / 2
 

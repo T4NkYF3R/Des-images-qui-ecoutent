@@ -1,9 +1,10 @@
-# 🧠 **Expérience cognitive:** Des images qui écoutent
+# 🧠 **Expérience psychologie cognitive:** Des images qui écoutent
 *Le lien entre induction musicales et perception de stimuli picturaux neutres*
 ---
 ![Python](https://img.shields.io/badge/Python-3.13.9-green?logo=python&style=plastic)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8.6-orange?style=plastic)
-![Pygame](https://img.shields.io/badge/Pygame-2.6.1-blue?style=plastic)  
+![Pygame](https://img.shields.io/badge/Pygame-2.6.1-blue?style=plastic)
+![Pillow](https://img.shields.io/badge/Pillow-12.0.0-purple?style=plastic)  
 ![Release](https://img.shields.io/github/v/release/T4NkYF3R/Des-images-qui-ecoutent?include_prereleases&display_name=tag&logo=github&color=red&style=plastic)
 ![Contact](https://img.shields.io/badge/Github-@T4NkYF3R-black?logo=github&logoColor=white&style=plastic)
 ![Email](https://img.shields.io/badge/Email-contact-yellow?logo=gmail&logoColor=white&style=plastic)
@@ -114,10 +115,10 @@ Les données de l'expérience sont enregistrées au format `csv` dans dans le fi
 - **Nicolas Négron ·** [📧 Email](mailto:nicolas.negron@laposte.net) **·** [🌐 Github](https://www.github.com/T4NkYF3R)
 ### 🎓 **Equipe de recherche**
 - **Etudiantes en psychologie cognitive**  
-**X ·** [📧 Email](mailto:X@laposte.net)  
-**X ·** [📧 Email](mailto:X@laposte.net)  
-**X ·** [📧 Email](mailto:X@laposte.net)  
-**X ·** [📧 Email](mailto:X@laposte.net)  
+**Etudiante 1 ·** [📧 Email](mailto:etudiante1@gmail.com)  
+**Etudiante 2 ·** [📧 Email](mailto:etudiante2@gmail.com)  
+**Etudiante 3 ·** [📧 Email](mailto:etudiante3@gmail.com)  
+**Etudiante 4 ·** [📧 Email](mailto:etudiante4@gmail.com)  
 
 ---
 ## ⚖️ **Licence**
