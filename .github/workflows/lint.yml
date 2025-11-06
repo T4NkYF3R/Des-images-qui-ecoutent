@@ -27,4 +27,4 @@ jobs:
 
             - name: Analyze Ruff report
               run: |
-                python devops/scripts/ruff_report.py ruff-report.log
+                python devops/scripts/ruff-report.py ruff-report.log
