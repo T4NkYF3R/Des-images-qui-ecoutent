@@ -17,24 +17,26 @@ Il vise à explorer **le lien entre induction musicale et perception visuelle** 
 ## 🧱 **Architecture projet**
 ```bash
 .
-
-├── /app    # Code source
-│   ├── /assets
-│   ├── /window
+│
+├── .github/            # Configuration GitHub
+│   └── workflows/
+│
+├── app/                # Code source de l'application
 │   ├── __init__.py
 │   ├── config.py
 │   ├── data.py
 │   └── main.py
 │
-├── /assets # Assets du projet
-│   ├── /image
-│   └── /music
+├── assets/             # Ressources pour l'expérience
 │
-├── /data   # Sauvegarde des résultats
+├── data/               # Données enregistrées pendant l'expérience
 │   └── reponses.csv
 │
+├── devops/             # Scripts et configuration DevOps
+│   └── scripts/
+│
 ├── README.md
-└── requirement.txt
+└── requirements.txt
 ```
 
 ---
