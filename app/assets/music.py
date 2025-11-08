@@ -61,6 +61,9 @@ class Music:
     def run(self) -> None:
         self._session = self._window.getSession()
         self._check_session_change()
+        if self._window.getControle() is True:
+            self.stop()
+            return
         self._load(session=self._session)
         self._play()
         sleep(NB_SECONDS)
