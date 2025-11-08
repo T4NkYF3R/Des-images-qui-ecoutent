@@ -76,12 +76,12 @@ class GroupFrame(BaseFrame):
         self._window.show_frame("start")
 
     def _create_group_button(self) -> None:
-        groupes = ["Groupe contrôle", "Groupe expérimental"]
+        groupes = ["Contrôle", "Expérimental"]
         for i in range(2):
             button = self.create_button(
                 text=groupes[i],
                 color="white",
-                width=None,
+                width=20,
                 height=None,
                 command=lambda groupe=i:self._setGroupe(groupe=groupe)
             )
