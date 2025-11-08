@@ -51,6 +51,53 @@ class BaseFrame(tkinter.Frame):
         return (self._width, self._height)
 
 
+class GroupFrame(BaseFrame):
+    def __init__(self, window: Window) -> None:
+        super().__init__(window)
+        self._buttons: list[tkinter.Button] = []
+        self._buttonSelected = False
+        self._create_group_button()
+        self._getSize()
+        self.placeX = (self._window.width - self._width) / 2
+        self.placeY = (self._window.height - self._height) / 2
+
+    def _setGroupe(self, groupe: int) -> None:
+        self._buttonSelected = True
+        for i, button in enumerate(self._buttons):
+            if i == groupe:
+                button.configure(background=ACTIVE_BG_BUT_COLOR, foreground=ACTIVE_FG_BUT_COLOR)
+            else:
+                button.configure(background="white", foreground="black")
+
+    def _validate(self) -> None:
+        if self._buttonSelected is not True:
+            return
+        self._window.hide_frame("group")
+        self._window.show_frame("start")
+
+    def _create_group_button(self) -> None:
+        groupes = ["Groupe contrôle", "Groupe expérimental"]
+        for i in range(2):
+            button = self.create_button(
+                text=groupes[i],
+                color="white",
+                width=None,
+                height=None,
+                command=lambda groupe=i:self._setGroupe(groupe=groupe)
+            )
+            button.grid(row=i, column=0)
+            self._buttons.append(button)
+
+        button = self.create_button(
+            text="Valider",
+            color="white",
+            width=None,
+            height=None,
+            command=self._validate
+        )
+        button.grid(row=2, column=0, pady=PADY)
+
+
 class StartFrame(BaseFrame):
     def __init__(self, window: Window) -> None:
         super().__init__(window)
@@ -229,6 +276,7 @@ class EndFrame(BaseFrame):
 
 
 FRAME_LIST = {
+    "group": GroupFrame,
     "start": StartFrame,
     "image": ImageFrame,
     "response": ResponseFrame,

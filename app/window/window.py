@@ -59,5 +59,5 @@ class Window(tkinter.Tk):
 
     def run(self) -> None:
         self._start_music_thread()
-        self.show_frame("start")
+        self.show_frame("group")
         self.mainloop()
