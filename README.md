@@ -22,12 +22,16 @@ Hearsee/
 │   └── workflows/
 │
 ├── app/                # Code source de l'application
+│   ├── assets/
+│   ├── window/
 │   ├── __init__.py
 │   ├── config.py
 │   ├── data.py
 │   └── main.py
 │
 ├── assets/             # Ressources pour l'expérience
+│   ├── image/
+│   └── music/
 │
 ├── data/               # Données enregistrées pendant l'expérience
 │   └── reponses.csv
