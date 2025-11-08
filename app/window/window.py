@@ -16,6 +16,7 @@ class Window(tkinter.Tk):
 
         self._frames = {}
         self._session = 0
+        self._control = False
 
         from app.assets import Music
         self._musicPlayer = Music(self)
@@ -53,11 +54,18 @@ class Window(tkinter.Tk):
     def getCurrentMusic(self) -> str:
         return self._musicPlayer.getMusicLoaded()
 
+    def setControle(self, status: bool) -> None:
+        self._control = status
+
+    def getControle(self) -> bool:
+        return bool(self._control)
+
     def stop(self) -> None:
-        self._musicPlayer.stop()
+        if self._control is False:
+            self._musicPlayer.stop()
         self._close_window()
 
     def run(self) -> None:
         self._start_music_thread()
-        self.show_frame("start")
+        self.show_frame("group")
         self.mainloop()

@@ -51,6 +51,54 @@ class BaseFrame(tkinter.Frame):
         return (self._width, self._height)
 
 
+class GroupFrame(BaseFrame):
+    def __init__(self, window: Window) -> None:
+        super().__init__(window)
+        self._buttons: list[tkinter.Button] = []
+        self._buttonSelected = False
+        self._create_group_button()
+        self._getSize()
+        self.placeX = (self._window.width - self._width) / 2
+        self.placeY = (self._window.height - self._height) / 2
+
+    def _setGroupe(self, groupe: bool) -> None:
+        self._buttonSelected = True
+        for i, button in enumerate(self._buttons):
+            if i == int(groupe):
+                button.configure(background=ACTIVE_BG_BUT_COLOR, foreground=ACTIVE_FG_BUT_COLOR)
+            else:
+                button.configure(background="white", foreground="black")
+        self._window.setControle(status=groupe)
+
+    def _validate(self) -> None:
+        if self._buttonSelected is not True:
+            return
+        self._window.hide_frame("group")
+        self._window.show_frame("start")
+
+    def _create_group_button(self) -> None:
+        groupes = ["Expérimental", "Contrôle"]
+        for i in range(2):
+            button = self.create_button(
+                text=groupes[i],
+                color="white",
+                width=20,
+                height=None,
+                command=lambda groupe=i:self._setGroupe(groupe=groupe)
+            )
+            button.grid(row=i + 1, column=0)
+            self._buttons.append(button)
+
+        button = self.create_button(
+            text="Valider",
+            color="white",
+            width=None,
+            height=None,
+            command=self._validate
+        )
+        button.grid(row=3, column=0, pady=PADY)
+
+
 class StartFrame(BaseFrame):
     def __init__(self, window: Window) -> None:
         super().__init__(window)
@@ -67,8 +115,9 @@ class StartFrame(BaseFrame):
         self._window.hide_frame("start")
         imageFrame: ImageFrame = self._window.getFrame("image")
         imageFrame.setNextImage()
-        self._window.after(ms=AFTER_TIME, func=lambda: self._window.show_frame("image"))
-        self._window.after(ms=AFTER_TIME, func=lambda: self._window.show_frame("response"))
+        time = AFTER_TIME if self._window.getControle() is False else 0
+        self._window.after(ms=time, func=lambda: self._window.show_frame("image"))
+        self._window.after(ms=time, func=lambda: self._window.show_frame("response"))
 
     def _create_start_sutton(self) -> None:
         button = self.create_button(
@@ -166,7 +215,7 @@ class ResponseFrame(BaseFrame):
         if self._value_selected is None:
             return
 
-        musicName = Path(self._window.getCurrentMusic()).stem
+        musicName = Path(self._window.getCurrentMusic()).stem if self._window.getControle() is False else "No music"
         imageFrame: ImageFrame = self._window.getFrame("image")
         current_image = imageFrame.getCurrentImage()
         imageName = Path(current_image if current_image is not None else "Undefined").stem
@@ -229,6 +278,7 @@ class EndFrame(BaseFrame):
 
 
 FRAME_LIST = {
+    "group": GroupFrame,
     "start": StartFrame,
     "image": ImageFrame,
     "response": ResponseFrame,
