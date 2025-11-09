@@ -1,7 +1,7 @@
 # 🧠 **Hearsee**
 *Des images qui écoutent: Le lien entre induction musicales et perception de stimuli picturaux neutres*
 ---
-![Python](https://img.shields.io/badge/Python-3.13.9-green?logo=python&style=plastic)
+![Python](https://img.shields.io/badge/Python-3.12.12-green?logo=python&style=plastic)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8.6-orange?style=plastic)
 ![Pygame](https://img.shields.io/badge/Pygame-2.6.1-blue?style=plastic)
 ![Pillow](https://img.shields.io/badge/Pillow-12.0.0-purple?style=plastic)  
