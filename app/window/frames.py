@@ -28,6 +28,9 @@ class BaseFrame(tkinter.Frame):
                 foreground="black",
                 activebackground="black",
                 activeforeground="white",
+                bd=0,
+                highlightthickness=2,
+                highlightbackground="black",
                 command=command
             )
 
@@ -87,7 +90,7 @@ class GroupFrame(BaseFrame):
                 height=None,
                 command=lambda groupe=i:self._setGroupe(groupe=groupe)
             )
-            button.grid(row=i + 1, column=0)
+            button.grid(row=i + 1, column=0, pady=2)
             self._buttons.append(button)
 
         button = self.create_button(
