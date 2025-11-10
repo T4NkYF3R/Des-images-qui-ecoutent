@@ -1,0 +1,92 @@
+name: Build executables
+
+on:
+    push:
+        branches:
+            - main
+            - build-executables
+
+jobs:
+    build-linux:
+        name: Build Linux executable
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.12.12
+
+            - name: Install dependencies
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                pip install pyinstaller
+
+            - name: Build Linux executable
+              run: |
+                pyinstaller --onefile app/main.py --name Hearsee-linux --add-data "assets:assets"
+
+            - name: Upload Linux executable
+              uses: actions/upload-artifact@v4
+              with:
+                name: app-linux
+                path: dist/Hearsee-linux
+
+    build-windows:
+        name: Build Windows .exe
+        runs-on: windows-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.12.10
+
+            - name: Install dependencies
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                pip install pyinstaller
+
+            - name: Build Windows .exe
+              run: |
+                pyinstaller --onefile app/main.py --name Hearsee --add-data "assets;assets"
+
+            - name: Upload Windows .exe
+              uses: actions/upload-artifact@v4
+              with:
+                name: app-windows
+                path: dist/Hearsee.exe
+
+    build-macos:
+        name: Build Macos .app
+        runs-on: macos-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.12.10
+
+            - name: Install dependencies
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                pip install pyinstaller
+
+            - name: Build Macos .app
+              run: |
+                pyinstaller --onefile --windowed app/main.py --name Hearsee --add-data "assets:assets"
+
+            - name: Upload Macos .app
+              uses: actions/upload-artifact@v4
+              with:
+                name: app-macos
+                path: dist/Hearsee.app
