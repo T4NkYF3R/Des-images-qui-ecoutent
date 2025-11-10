@@ -33,6 +33,11 @@ Hearsee/
 │   ├── image/
 │   └── music/
 │
+├── bin/                # Exécutable de l'application
+│   ├── Linux/
+│   ├── macOS/
+│   └── Windows/
+│
 ├── data/               # Données enregistrées pendant l'expérience
 │   └── reponses.csv
 │
@@ -45,40 +50,53 @@ Hearsee/
 
 ---
 ## ⚙️ **Installation**
-### 0️⃣ **Cloner le repo**
+### 🧑‍💻 **Pour les développeurs**
+#### 0️⃣ **Cloner le dépôt**
 ```bash
 git clone https://github.com/T4NkYF3R/Hearsee
 cd Hearsee
 ```
-### 1️⃣ **Créer un environnement virtuel**
+#### 1️⃣ **Créer un environnement virtuel**
 - **Windows :**
 ```bash
-python3.13 -m venv .venv
+python3.12 -m venv .venv
 .venv\Scripts\activate
 ```
 - **Linux *(Fedora)* :**
 ```bash
-python3.13 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 ```
-### 2️⃣ **Installer les dépendances**
+#### 2️⃣ **Installer les dépendances**
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 📦 `requirements.txt` contient les bibliotèques nécessaires (`pygame`, etc.)  
-🧩 `Tkinter` n'est pas inclus car il fait partie de Python standard.
-### 3️⃣ **Vérifier que `Tkinter` est installé**
+🧩 `Tkinter` fait partie de Python standard, mais peut nécessiter une installation manuelle sur Linux.
+#### 3️⃣ **Vérifier que `Tkinter` est installé**
 - **Windows :** `Tkinter` est généralement inclus avec Python
 - **Linux *(Fedora)* :**
 ```bash
 sudo dnf install python3-tkinter
 ```
-### 4️⃣ **Lancer l'application**
+#### 4️⃣ **Lancer l'application**
 ```bash
 python -m app.main
 ```
 
+---
+### 👥 **Pour les utilisateurs**
+Aucune installation Python requise — télécharge simplement l'exécutable correspondant à ton système d'exploitation :
+| **Système** | **Fichier exécutable** | **Lancement** |
+|-|-|-|
+| 🪟 **Windows** | `Hearsee.exe` | Double-clique sur le fichier |
+| 🐧 **Linux** | `Hearsee` | Double-clique ou `./Hearsee` dans un terminal |
+| 🍎 **macOS** | `Hearsee.app` | Double-clique sur l'application |
+
+💡 *Les exécutables se trouvent dans le dossier `/bin` du projet GitHub. Téléchargez la dernière [Release](https://github.com/T4NkYF3R/Des-images-qui-ecoutent/releases) pour obtenir la version la plus récente de l'application.*
+
+---
 ## 🎓 **L'experience**
 - L'expérience se déroule en **2 sessions** 🧩.
 - Une pause est prévu entre chaque session ☕.
