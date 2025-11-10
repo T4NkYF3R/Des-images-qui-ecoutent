@@ -3,7 +3,7 @@ from pathlib import Path
 
 # ========== CONFIG ==========
 NB_SESSION = 2
-NB_IMAGE_SESSION = 5
+NB_IMAGE_SESSION = 10
 CSV_FILE = "reponses.csv"
 
 
