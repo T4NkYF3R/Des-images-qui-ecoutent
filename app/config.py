@@ -31,8 +31,8 @@ FONT = ("Arial", 20, "bold")
 PADX = 5
 PADY = 20
 
-MAX_WIDTH_IMAGE = 1000
-MAX_HEIGHT_IMAGE = 800
+MAX_WIDTH_IMAGE = 1000 / 1920
+MAX_HEIGHT_IMAGE = 800 / 1080
 
 
 # ========== TIMES ==========
