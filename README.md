@@ -136,7 +136,7 @@ Les données de l'expérience sont enregistrées au format `csv` dans dans le fi
   | **Julia Raevesteyn**                    | **·** [📧 Email](mailto:raevesteyn.gestion@gmail.com) |
   | **Marie De Champeville**                | **·** [📧 Email](mailto:mdechampevillepro@gmail.com)  |
   | **Cléo Porta**                          | **·** [📧 Email](mailto:cleoporta2004@gmail.com)      |
-  | **Cécille Queyroy**                     | **·** [📧 Email](mailto:queyroycecile.lhm@gmail.com)  |
+  | **Cécile Queyroy**                     | **·** [📧 Email](mailto:queyroycecile.lhm@gmail.com)  |
 
 ---
 ## ⚖️ **Licence**
