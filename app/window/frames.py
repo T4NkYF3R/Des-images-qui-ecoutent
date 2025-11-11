@@ -238,7 +238,7 @@ class ResponseFrame(BaseFrame):
             self._window.setSession(value=-self._window.getSession())
             self._window.hide_frame("image")
             self._window.hide_frame("response")
-            if -self._window.getSession() < NB_SESSION:
+            if -self._window.getSession() < NB_SESSION and self._window.getControle() is False:
                 self._window.show_frame("start")
             else:
                 self._window.show_frame("end")
