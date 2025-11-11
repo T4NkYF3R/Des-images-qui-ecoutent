@@ -11,8 +11,8 @@ class Window(tkinter.Tk):
         self.attributes("-fullscreen", True)
         self.configure(background=BACKGROUND_COLOR)
         self.bind("<Escape>", func=self._close_window)
-        self.width = 1920
-        self.height = 1080
+        self.width = self.winfo_screenwidth()
+        self.height = self.winfo_screenheight()
 
         self._frames = {}
         self._session = 0
