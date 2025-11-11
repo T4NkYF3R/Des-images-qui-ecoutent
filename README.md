@@ -145,11 +145,12 @@ Les données de l'expérience sont enregistrées au format `csv` dans dans le fi
 ### 👨‍💻 **Equipe de développement**
 - **Nicolas Négron ·** [📧 Email](mailto:nicolas.negron@laposte.net) **·** [🌐 Github](https://www.github.com/T4NkYF3R)
 ### 🎓 **Equipe de recherche**
-- **Etudiantes en psychologie cognitive**  
-**Etudiante 1 ·** [📧 Email](mailto:etudiante1@gmail.com)  
-**Etudiante 2 ·** [📧 Email](mailto:etudiante2@gmail.com)  
-**Etudiante 3 ·** [📧 Email](mailto:etudiante3@gmail.com)  
-**Etudiante 4 ·** [📧 Email](mailto:etudiante4@gmail.com)  
+- | **Etudiantes en psychologie cognitive** |                                                       |
+  |-----------------------------------------|-------------------------------------------------------|
+  | **Julia Raevesteyn**                    | **·** [📧 Email](mailto:raevesteyn.gestion@gmail.com) |
+  | **Marie De Champeville**                | **·** [📧 Email](mailto:mdechampevillepro@gmail.com)  |
+  | **Cléo Porta**                          | **·** [📧 Email](mailto:cleoporta2004@gmail.com)      |
+  | **Cécille Queyroy**                     | **·** [📧 Email](mailto:queyroycecile.lhm@gmail.com)  |
 
 ---
 ## ⚖️ **Licence**
