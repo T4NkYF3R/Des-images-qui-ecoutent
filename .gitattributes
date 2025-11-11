@@ -5,3 +5,6 @@
 /bin/Linux/*    binary
 /bin/macOS/*    binary
 /bin/Windows/*  binary
+
+/assets/image/* binary
+/assets/music/* binary
