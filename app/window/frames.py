@@ -163,7 +163,7 @@ class ImageFrame(BaseFrame):
         image = Img.open(self._currentImage)
         image = ImgOps.exif_transpose(image=image)
         width , height = image.size
-        ratio = min(MAX_WIDTH_IMAGE / width, MAX_HEIGHT_IMAGE / height)
+        ratio = min(MAX_WIDTH_IMAGE * self._window.width / width, MAX_HEIGHT_IMAGE * self._window.height / height)
         width = int(width * ratio)
         height = int(height * ratio)
         image = image.resize(size=(width, height))
@@ -238,7 +238,7 @@ class ResponseFrame(BaseFrame):
             self._window.setSession(value=-self._window.getSession())
             self._window.hide_frame("image")
             self._window.hide_frame("response")
-            if -self._window.getSession() < NB_SESSION:
+            if -self._window.getSession() < NB_SESSION and self._window.getControle() is False:
                 self._window.show_frame("start")
             else:
                 self._window.show_frame("end")
