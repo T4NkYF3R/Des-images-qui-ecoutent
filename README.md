@@ -49,10 +49,13 @@ Hearsee/
 Si vous n'avez pas `Python 3.12` vous pouvez le télécharger depuis le site officiel:  
 ➡️ [Python 3.12](https://www.python.org/downloads/release/python-31210/)
 ### 1️⃣ **Cloner le dépôt**
+- **Pour les développeurs :**
 ```bash
 git clone https://github.com/T4NkYF3R/Hearsee
 cd Hearsee
 ```
+- **Pour les utilisateurs** :  
+Téléchargez la dernière version [release](https://github.com/T4NkYF3R/Hearsee/releases) et rentrez dans le dossier.
 ### 2️⃣ **Créer un environnement virtuel**
 - **Windows :**
 ```bash
